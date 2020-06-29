@@ -14,22 +14,23 @@
 # functions. Make sure you only traverse the string once.
 # @param A : string
 # @return an integer
-def lengthOfLastWord(A):
-    count = 0
-    A = A.strip()
+def length_of_last_word(A):
+  count = 0
+  A = A.strip()
+  print(A)
 
-    if len(A) == 0:
-        return 0
+  if len(A) == 0:
+      return 0
 
-        for i in reversed(A):
-            if i.isalnum():
-                count += 1
-            else:
-                break
+  for i in reversed(A):
+      if i.isalnum():
+          count += 1
+      else:
+          break
 
-                return count
+  return count
 print(
-length_of_last_word("    ")
+length_of_last_word("Hello workd")
 )
 
 # Using Library functions
