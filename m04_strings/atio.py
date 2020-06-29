@@ -16,10 +16,9 @@
 # Note:
 # Only the space character ' ' is considered as whitespace character.
 #
-import sys
 def atoi(a):
     INT_MIN = -2147483648
-    INT_MAX = 2147483648
+    INT_MAX = 2147483647 # input =  "2147483648"
     a = a.strip()
     integer_string = ""
     if len(a)== 0 :
@@ -32,18 +31,17 @@ def atoi(a):
         if not a[i].isnumeric():
             break
         integer_string += a[i]
-    integer = int(integer_string)
-    if integer > INT_MAX:
-        return INT_MAX
-    if integer < INT_MIN:
-        return INT_MIN
+    if len(integer_string) == 1 and not integer_string.isnumeric(): # input =  "+-2", "+"
+        return 0
+    else :
+        integer = int(integer_string)
+        if integer > INT_MAX:
+            return INT_MAX
+        if integer < INT_MIN:
+            return INT_MIN
+        return integer
 
-    return integer
-## TO DO
-# Last executed input:
-# # "+"
-input =  "12312.123"
+input =  "2147483648"
 print(
 atoi(input)
 )
-# Output: -42
