@@ -19,7 +19,7 @@ def length_of_last_word(A):
   A = A.strip()
   print(A)
 
-  if len(A) == 0:
+  if len(A) == 0 or " " not in A:
       return 0
 
   for i in reversed(A):
@@ -30,7 +30,7 @@ def length_of_last_word(A):
 
   return count
 print(
-length_of_last_word("Hello workd")
+length_of_last_word("World")
 )
 
 # Using Library functions

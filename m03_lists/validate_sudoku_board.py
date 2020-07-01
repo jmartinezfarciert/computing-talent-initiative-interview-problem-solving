@@ -7,6 +7,47 @@
 
 def validate_sudoku_board(board):
     #validate rows
+    pass
+
+def validate_row(row):
+    # determine if there are any repeated numbers withi this list
+    # create a container to hold the numbers 1-9
+    seen_numbers = [False for x in row]
+    # loop over every element in the row
+    for element in row :
+        # if you haven't seen this number before
+        if element != "." :
+            index = int(element)-1
+            if not seen_numbers[index]:
+                #add the number to the container
+                seen_numbers[index] = True
+            else:
+                return False
+    return True
+
+print(
+validate_row(["8","3",".",".","7",".",".",".","."]),
+validate_row(["8","3",".",".","7",".",".","3","."])
+)
+
+# print(
+# validate_sudoku_board(
+# [
+#   ["8","3",".",".","7",".",".",".","."],
+#   ["6",".",".","1","9","5",".",".","."],
+#   [".","9","8",".",".",".",".","6","."],
+#   ["8",".",".",".","6",".",".",".","3"],
+#   ["4",".",".","8",".","3",".",".","1"],
+#   ["7",".",".",".","2",".",".",".","6"],
+#   [".","6",".",".",".",".","2","8","."],
+#   [".",".",".","4","1","9",".",".","5"],
+#   [".",".",".",".","8",".",".","7","9"]
+# ])
+# )
+
+## Alternate half-assed solution
+def validate_sudoku_board(board):
+    #validate rows
     for row in board:
         temp = []
         temp[:] = row[:]
@@ -31,18 +72,3 @@ def validate_sudoku_board(board):
         if len(filled_boxes) != len(set(column))-1:
             return False
     return True
-
-print(
-validate_sudoku_board(
-[
-  ["8","3",".",".","7",".",".",".","."],
-  ["6",".",".","1","9","5",".",".","."],
-  [".","9","8",".",".",".",".","6","."],
-  ["8",".",".",".","6",".",".",".","3"],
-  ["4",".",".","8",".","3",".",".","1"],
-  ["7",".",".",".","2",".",".",".","6"],
-  [".","6",".",".",".",".","2","8","."],
-  [".",".",".","4","1","9",".",".","5"],
-  [".",".",".",".","8",".",".","7","9"]
-])
-)
