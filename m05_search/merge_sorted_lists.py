@@ -20,7 +20,6 @@ def merge_sorted_lists(nums1, nums2):
             nums1_index = nums2_index
         else :
             nums1_index += 1
-        print(nums1)
     return nums1
 
 merge_sorted_lists(nums1, nums2)
