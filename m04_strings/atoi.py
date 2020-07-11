@@ -45,3 +45,29 @@ input =  "2147483648"
 print(
 atoi(input)
 )
+# Liz Howards Solution
+def atoi(a):
+    if not len(input_string):
+        return 0
+
+    sign = 1
+    if input_string[0] == "-":
+        sign = -1
+        input_string = input_string[1:]
+    if input_string[0] == "+"
+        input_string = input_string[1:]
+
+    a.strip()
+    final_number = " "
+    for character in input_string:
+    if character.isnumeric():
+        final_number += character
+    else:
+        break
+    if len(final_number) == 0:
+        return 0
+    num = int(final_number) * sign
+    if num > 2 ** 32 or num < ((2**32) * -1):
+        return 2147483648 * sign
+    else:
+        return num

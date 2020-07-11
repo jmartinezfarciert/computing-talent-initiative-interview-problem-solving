@@ -5,3 +5,7 @@ def valid_anagram(s, t):
 print(
 valid_anagram("bsoy", "byo")
 )
+
+
+# using collections
+# return collections.Counter(s) == collections.Counter(t) 
