@@ -25,7 +25,6 @@ def find_index(sorted_list, target):
             start = test_index
         if sorted_list[test_index] >= target:
             end = test_index
-    print(test_index)
     if sorted_list[test_index] >= target:
         return test_index
     else :
