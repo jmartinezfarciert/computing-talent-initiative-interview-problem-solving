@@ -18,26 +18,20 @@
 # Output: 2
 # Explanation: The square root of 8 is 2.82842..., and since
 #              the decimal part is truncated, 2 is returned.
-def squareRoot(num):
+def squareRoot(A):
     start = 0
-    end = (num // 2) + 1
+    end = (A // 2) + 1
+    if A == 1:
+        return 1
 
     while start < end-1:
         print(start, "start")
         print(end, "end")
-        if (end - start) % 2 == 0:
-            pivot = int((end - start) / 2) + start
-        else :
-            pivot = int((end - start + 1) / 2) + start
-        if pivot * pivot > num:
+        pivot = (end - start) // 2 + start
+        if pivot * pivot >= A:
             end = pivot
-        if pivot * pivot < num:
+        if pivot * pivot <= A:
             start = pivot
-        if pivot * pivot == num :
-            start = pivot
-            end = pivot
     return start
 
-
-sampleInput = 16
-print(squareRoot(sampleInput))
+print(squareRoot(1))
