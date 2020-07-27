@@ -13,15 +13,15 @@
 # '<' will not be the first character.
 #
 def k_backspace(test_str) :
-    output_list = []
-    for i in range(len(test_str)):
-        if test_str[i].isalpha():
-            output_list.append(test_str[i])
-        if test_str[i] == "<":
-            output_list.pop()
-    return ''.join(output_list)
+    stack = []
+    for char in test_str:
+        if char == "<":
+            stack.pop()
+        else :
+            stack.append(char)
+    return ''.join(stack)
 
-k_backspaces("a<a<a<aa<<")
+k_backspace("a<a<a<aa<<")
 
 # Sample Output
 # Input #1
