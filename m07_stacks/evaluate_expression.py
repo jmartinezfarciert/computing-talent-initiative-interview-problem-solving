@@ -32,7 +32,7 @@ def evaluate_expression(expression):
             stack.append(x)
         else :
             stack.append(element)
-    return stack[len(stack)-1]
+    return stack.pop()
 
 evaluate_expression(["3", "4", "+", "5", "-"])
 # Example 1:
